@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Platinum — GTA 6 Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <h1>Vice City Platinum</h1>
+    <p class="sub">All 55 official trophies — guides, a checklist tracker, and a road to platinum.</p>
+    <p class="note">GTA 6 released 19 November 2026. Guides are written from the official trophy
+    descriptions and the game's trailers; where a detail is still being confirmed by the
+    community, the guide says so rather than inventing it.</p>
+  </div>
+</header>
+
+<main>
+  <section class="progress" aria-label="Progress">
+    <div class="progress-text">
+      <span id="progress-count">0 / 55 earned</span>
+      <span id="progress-pct">0%</span>
+    </div>
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="progress-actions">
+      <button id="export-btn" type="button">Export progress (JSON)</button>
+      <button id="import-btn" type="button">Import progress (JSON)</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+      <button id="reset-btn" type="button">Reset progress</button>
+    </div>
+    <p class="progress-hint">Progress is saved in this browser only.</p>
+  </section>
+
+  <section class="controls" aria-label="Filters">
+    <div class="control-row">
+      <label for="search">Search</label>
+      <input type="search" id="search" placeholder="Search name, description, or guide&hellip;" autocomplete="off">
+    </div>
+    <div class="control-row">
+      <span class="control-label" id="kind-label">Kind</span>
+      <div class="chip-group" role="group" aria-labelledby="kind-label" id="kind-filters">
+        <button type="button" data-kind="all" class="chip active" aria-pressed="true">All</button>
+        <button type="button" data-kind="story" class="chip" aria-pressed="false">Story</button>
+        <button type="button" data-kind="missable" class="chip" aria-pressed="false">Missable (none confirmed yet)</button>
+        <button type="button" data-kind="collectibles" class="chip" aria-pressed="false">Collectibles</button>
+        <button type="button" data-kind="activities" class="chip" aria-pressed="false">Activities</button>
+        <button type="button" data-kind="online" class="chip" aria-pressed="false">Online</button>
+      </div>
+    </div>
+    <div class="control-row">
+      <span class="control-label" id="grade-label">Grade</span>
+      <div class="chip-group" role="group" aria-labelledby="grade-label" id="grade-filters">
+        <button type="button" data-grade="all" class="chip active" aria-pressed="true">All grades</button>
+        <button type="button" data-grade="platinum" class="chip" aria-pressed="false">Platinum</button>
+        <button type="button" data-grade="gold" class="chip" aria-pressed="false">Gold</button>
+        <button type="button" data-grade="silver" class="chip" aria-pressed="false">Silver</button>
+        <button type="button" data-grade="bronze" class="chip" aria-pressed="false">Bronze</button>
+      </div>
+    </div>
+    <div class="control-row">
+      <label class="toggle">
+        <input type="checkbox" id="spoiler-toggle">
+        <span>Hide story spoilers (show &ldquo;???&rdquo; until earned)</span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="hide-earned-toggle">
+        <span>Hide earned trophies</span>
+      </label>
+    </div>
+    <p class="results-line" id="results-line" aria-live="polite"></p>
+  </section>
+
+  <section class="roadmap" aria-labelledby="roadmap-heading">
+    <h2 id="roadmap-heading">Road to Platinum</h2>
+    <p class="roadmap-intro">A suggested order: story first (in chapter order), then missable trophies,
+    then collectibles, then activities and online. Tick trophies off in the checklist and the
+    roadmap updates.</p>
+    <ol class="roadmap-list" id="roadmap-list"></ol>
+  </section>
+
+  <section class="checklist" aria-labelledby="checklist-heading">
+    <h2 id="checklist-heading">Trophy checklist</h2>
+    <ul class="trophy-list" id="trophy-list"></ul>
+    <p class="empty" id="empty-state" hidden>No trophies match the current filters.</p>
+  </section>
+
+  <aside class="detail" id="detail" aria-label="Trophy detail" hidden>
+    <button type="button" class="detail-close" id="detail-close" aria-label="Close detail">&times;</button>
+    <div id="detail-body"></div>
+  </aside>
+</main>
+
+<footer>
+  <p>Trophy names and descriptions are the official PlayStation trophy list for Grand Theft Auto VI.
+  Guides are original writing. Not affiliated with Rockstar Games or PlayStation.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
